@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HSR wordle</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    </head>
+    <body>
+        <div class="game-container">
+            <h1><i>Honkai: Star Rail</i> wordle</h1>
+
+            <div class="settings-dropdown">
+                <button id="settingsBtn" class="menu-btn">Settings ⚙️</button>
+                <div id="settingsMenu" class="menu-content hidden">
+                    <div class="setting-item">
+                        <label
+                            ><input type="checkbox" id="hintToggle" /> Enable Up/Down Hints</label
+                        >
+                    </div>
+                    <hr />
+                    <h4>Visible Columns</h4>
+                    <div id="toggleContainer" class="column-list"></div>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search character..." />
+                <div id="suggestionsBox" class="hidden"></div>
+            </div>
+
+            <div class="results-container">
+                <div id="gridHeader" class="grid-header"></div>
+                <div id="resultsGrid" class="results-grid"></div>
+            </div>
+        </div>
+
+        <div id="infoModal" class="modal hidden">
+            <div class="modal-content">
+                <span
+                    class="close-btn"
+                    onclick="document.getElementById('infoModal').classList.add('hidden')"
+                    >&times;</span
+                >
+                <h2 id="modalTitle">Title</h2>
+
+                <div id="winDisplay" class="hidden">
+                    <img id="winImage" src="" alt="Character" />
+                    <h3 id="winName">Character Name</h3>
+                </div>
+
+                <ul id="modalList"></ul>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
