@@ -45,6 +45,9 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    height: auto;
+
     display: flex;
     justify-content: center;
     margin: 0;
@@ -111,7 +114,7 @@ body {
         #suggestionsBox {
             position: absolute;
             top: 100%;
-            left: 0;
+            left: -1px;
             width: 100%;
             background-color: #1a1a1a;
             border: 1px solid var(--border-main);
