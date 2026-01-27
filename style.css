@@ -405,3 +405,35 @@ body {
         }
     }
 }
+
+@media (max-width: 768px) {
+    .game-container {
+        width: 100%;
+        padding: 10px; /* Reduce padding on mobile */
+        overflow: hidden; /* Prevent body scroll from jittering */
+    }
+
+    .results-container {
+        overflow-x: auto; /* Enables horizontal scroll */
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+        padding-bottom: 20px; /* Space for scrollbar */
+
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-main) var(--bg-dark);
+    }
+
+    .results-container .grid-header,
+    .results-container .guess-row {
+        min-width: calc(var(--col-count, 6) * 75px);
+        padding: 0 5px; /* Tiny buffer */
+    }
+
+    :root {
+        --fluid-font-square: 12px; /* Fix font size so it doesn't get too small */
+        --corner-size: 1.8em; /* Slightly smaller corner badges */
+    }
+
+    .card-square {
+        aspect-ratio: 1 / 1;
+    }
+}
