@@ -477,7 +477,7 @@
         "image": "assets\\characters\\1205.png",
         "path_img": "assets\\paths\\Destruction.png",
         "element_img": "assets\\elements\\Wind.png",
-        "species": ["Long-Life Species", "Short-Life Species"],
+        "species": ["Long-Life Species", "Short-Life Species", "Human"],
         "release": "July 19, 2023"
     },
     {
@@ -590,7 +590,7 @@
         "image": "assets\\characters\\1210.png",
         "path_img": "assets\\paths\\Nihility.png",
         "element_img": "assets\\elements\\Fire.png",
-        "species": ["Short-Life Species"],
+        "species": ["Short-Life Species", "Human"],
         "release": "October 27, 2023"
     },
     {
@@ -825,7 +825,7 @@
         "image": "assets\\characters\\1223.png",
         "path_img": "assets\\paths\\The_Hunt.png",
         "element_img": "assets\\elements\\Thunder.png",
-        "species": ["Long-Life Species", "Short-Life Species"],
+        "species": ["Long-Life Species", "Short-Life Species", "Human"],
         "release": "September 10, 2024"
     },
     {
