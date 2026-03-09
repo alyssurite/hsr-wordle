@@ -644,8 +644,20 @@
         "rarity": 5,
         "path": "Destruction",
         "element": "Imaginary",
-        "factions": ["The Xianzhou Luofu", "The Nameless", "Astral Express"],
-        "factions_verbose": ["The Xianzhou Luofu (on profile)", "The Nameless", "Astral Express"],
+        "factions": [
+            "The Xianzhou Luofu",
+            "The Nameless",
+            "Astral Express",
+            "High Elders",
+            "High-Cloud Quintet"
+        ],
+        "factions_verbose": [
+            "The Xianzhou Luofu (on profile)",
+            "The Nameless",
+            "Astral Express",
+            "High Elders (formerly)",
+            "High-Cloud Quintet (formerly)"
+        ],
         "image": "assets\\characters\\1213.png",
         "path_img": "assets\\paths\\Destruction.png",
         "element_img": "assets\\elements\\Imaginary.png",
