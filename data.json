@@ -1550,6 +1550,33 @@
         "release": "March 03, 2026"
     },
     {
+        "id": 1502,
+        "name": "Yao Guang",
+        "gender": "Female",
+        "rarity": 5,
+        "path": "Elation",
+        "element": "Physical",
+        "affiliation": [
+            "The Xianzhou Yuque",
+            "Xianzhou Alliance",
+            "Six Charioteers",
+            "Cloud Knights",
+            "Arbiter-Generals"
+        ],
+        "factions_verbose": [
+            "The Xianzhou Yuque (on profile)",
+            "Xianzhou Alliance",
+            "Six Charioteers (the Yuque)",
+            "Cloud Knights",
+            "Arbiter-Generals"
+        ],
+        "image": "assets\\characters\\1502.png",
+        "path_img": "assets\\paths\\Elation.png",
+        "element_img": "assets\\elements\\Physical.png",
+        "species": ["Xianzhou Native"],
+        "release": "February 13, 2026"
+    },
+    {
         "id": 8001,
         "name": "Caelus (Trailblazer / Destruction)",
         "gender": "Male",
