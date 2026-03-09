@@ -1535,6 +1535,21 @@
         "release": "November 05, 2025"
     },
     {
+        "id": 1501,
+        "name": "Sparxie",
+        "gender": "Female",
+        "rarity": 5,
+        "path": "Elation",
+        "element": "Fire",
+        "affiliation": ["Masked Fools"],
+        "factions_verbose": ["Masked Fools (on profile)"],
+        "image": "assets\\characters\\1501.png",
+        "path_img": "assets\\paths\\Elation.png",
+        "element_img": "assets\\elements\\Fire.png",
+        "species": ["Imagenae"],
+        "release": "March 03, 2026"
+    },
+    {
         "id": 8001,
         "name": "Caelus (Trailblazer / Destruction)",
         "gender": "Male",
