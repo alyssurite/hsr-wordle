@@ -1541,7 +1541,7 @@
         "rarity": 5,
         "path": "Elation",
         "element": "Fire",
-        "affiliation": ["Masked Fools"],
+        "factions": ["Masked Fools"],
         "factions_verbose": ["Masked Fools (on profile)"],
         "image": "assets\\characters\\1501.png",
         "path_img": "assets\\paths\\Elation.png",
@@ -1556,7 +1556,7 @@
         "rarity": 5,
         "path": "Elation",
         "element": "Physical",
-        "affiliation": [
+        "factions": [
             "The Xianzhou Yuque",
             "Xianzhou Alliance",
             "Six Charioteers",
