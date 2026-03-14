@@ -40,7 +40,7 @@
         "factions": ["Astral Express", "The Nameless"],
         "factions_verbose": ["Astral Express (on profile)", "The Nameless"],
         "image": "assets\\characters\\1002.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Wind.png",
         "species": ["Vidyadhara"],
         "release": "April 26, 2023"
@@ -179,7 +179,7 @@
         "factions": ["Another World"],
         "factions_verbose": ["Another World (on profile)"],
         "image": "assets\\characters\\1015.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Quantum.png",
         "species": ["Heroic Spirit"],
         "release": "July 11, 2025"
@@ -209,7 +209,7 @@
         "factions": ["Belobog", "Wildfire"],
         "factions_verbose": ["Belobog (on profile)", "Wildfire"],
         "image": "assets\\characters\\1102.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Quantum.png",
         "species": ["Human"],
         "release": "April 26, 2023"
@@ -380,7 +380,7 @@
             "Ten Stonehearts"
         ],
         "image": "assets\\characters\\1112.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Fire.png",
         "species": ["Human", "Warp Trotter"],
         "release": "October 27, 2023"
@@ -502,7 +502,7 @@
             "Ghost-Hunting Squad"
         ],
         "image": "assets\\characters\\1206.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Physical.png",
         "species": ["Xianzhou Native"],
         "release": "April 26, 2023"
@@ -573,7 +573,7 @@
             "Cloud Knights"
         ],
         "image": "assets\\characters\\1209.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Ice.png",
         "species": ["Xianzhou Native"],
         "release": "April 26, 2023"
@@ -758,7 +758,7 @@
             "Eclipse Pack (slave, formerly)"
         ],
         "image": "assets\\characters\\1220.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Wind.png",
         "species": ["Foxian", "Borisin"],
         "release": "September 10, 2024"
@@ -835,7 +835,7 @@
             "Disciples of Sanctus Medicus (formerly)"
         ],
         "image": "assets\\characters\\1223.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Thunder.png",
         "species": ["Long-Life Species", "Short-Life Species", "Human"],
         "release": "September 10, 2024"
@@ -866,7 +866,7 @@
             "Titans (Time)"
         ],
         "image": "assets\\characters\\1224.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Imaginary.png",
         "species": ["Pure Child of Anāsrava"],
         "release": "July 31, 2024"
@@ -976,7 +976,7 @@
             "University of Veritas Prime"
         ],
         "image": "assets\\characters\\1305.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Imaginary.png",
         "species": ["Human"],
         "release": "January 17, 2024"
@@ -1128,7 +1128,7 @@
         "factions": ["Galaxy Rangers", "Cosmos", "Aeragan-Epharshel"],
         "factions_verbose": ["Galaxy Rangers (on profile)", "Cosmos", "Aeragan-Epharshel"],
         "image": "assets\\characters\\1315.png",
-        "path_img": "assets\\paths\\The_Hunt.png",
+        "path_img": "assets\\paths\\The Hunt.png",
         "element_img": "assets\\elements\\Physical.png",
         "species": ["Cyborg", "Human"],
         "release": "May 29, 2024"
