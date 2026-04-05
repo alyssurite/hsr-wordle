@@ -1577,6 +1577,25 @@
         "release": "February 13, 2026"
     },
     {
+        "id": 1504,
+        "name": "Ashveil",
+        "gender": "Male",
+        "rarity": 5,
+        "path": "The Hunt",
+        "element": "Lightning",
+        "factions": ["Galaxy Rangers", "Planarcadia", "Ashen Detective Agency"],
+        "factions_verbose": [
+            "Galaxy Rangers (on profile)",
+            "Planarcadia",
+            "Ashen Detective Agency"
+        ],
+        "image": "assets\\characters\\1504.png",
+        "path_img": "assets\\paths\\The Hunt.png",
+        "element_img": "assets\\elements\\Thunder.png",
+        "species": ["Unknown"],
+        "release": "March 25, 2026"
+    },
+    {
         "id": 8001,
         "name": "Caelus (Trailblazer / Destruction)",
         "gender": "Male",
