@@ -12,23 +12,30 @@
 
     --color-accent: #c5c5c5;
     --color-correct: #5ea04a;
+    --color-correct-hover: #4e8a3c;
     --color-neutral: #8c8c8c;
     --color-wrong: #d36663;
 
-    /* Sizing & Layout */
+    /* Sizing & layout */
     --container-max-width: 900px;
     --search-max-width: 400px;
     --modal-max-width: 400px;
 
+    /* Fluid typography & spacing */
     --fluid-gap: clamp(4px, 1vw, 12px);
     --fluid-font: clamp(12px, 2vw, 20px);
     --fluid-font-square: clamp(10px, 1.5vw, 16px);
     --fluid-font-corner: 1em;
 
+    /* Components */
     --corner-size: 2em;
-    --transition-fast: 0.2s ease;
-
     --indicator-height: 1em;
+    --transition-speed: 0.2s;
+    --transition-func: ease;
+    --btn-scale-hover: scale(1.1);
+    --btn-scale-active: scale(0.95);
+
+    /* For future use */
     --rainbow-gradient: linear-gradient(
         90deg,
         #ff0000,
@@ -41,13 +48,13 @@
     );
 }
 
+/* --- Base styles --- */
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     height: auto;
-
     display: flex;
     justify-content: center;
     margin: 0;
@@ -58,6 +65,27 @@ body {
     display: none !important;
 }
 
+/* --- Shared button logic --- */
+.menu-btn {
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 5px;
+    border: 1px solid var(--border-light);
+    transition:
+        transform var(--transition-speed) var(--transition-func),
+        background-color var(--transition-speed) var(--transition-func),
+        box-shadow var(--transition-speed) var(--transition-func);
+}
+
+.menu-btn:hover {
+    transform: var(--btn-scale-hover);
+}
+
+.menu-btn:active {
+    transform: var(--btn-scale-active);
+}
+
+/* --- Animations --- */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -79,6 +107,7 @@ body {
     }
 }
 
+/* --- Game layout --- */
 .game-container {
     width: 100%;
     max-width: var(--container-max-width);
@@ -87,7 +116,7 @@ body {
     align-items: center;
     gap: 20px;
 
-    /* Search Section */
+    /* Search component */
     .search-container {
         position: relative;
         width: 100%;
@@ -104,7 +133,7 @@ body {
             border-radius: 4px;
             font-size: 16px;
             outline: none;
-            transition: border-color var(--transition-fast);
+            transition: border-color var(--transition-speed);
 
             &:focus {
                 border-color: var(--color-accent);
@@ -126,9 +155,8 @@ body {
                 padding: 10px;
                 cursor: pointer;
                 border-bottom: 1px solid var(--border-main);
-
                 &:hover,
-                &.active {
+                &.suggestion-active {
                     background-color: var(--border-main);
                 }
                 &:last-child {
@@ -138,27 +166,20 @@ body {
         }
     }
 
-    /* Column Toggles */
-    .column-selector {
-        text-align: center;
-        .toggle-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 10px;
-
-            label {
-                font-size: 14px;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
+    #newGameBtn {
+        margin-top: 30px;
+        padding: 12px 30px;
+        font-weight: bold;
+        background-color: var(--bg-surface);
+        letter-spacing: 1px;
+        color: var(--text-main);
+        &:hover {
+            border-color: var(--color-accent);
         }
     }
 }
 
+/* --- Results grid --- */
 .results-container {
     width: 100%;
 
@@ -189,7 +210,7 @@ body {
             align-items: center;
             width: 100%;
 
-            /* The Square Content */
+            /* The square content */
             .card-square {
                 width: 100%;
                 aspect-ratio: 1 / 1;
@@ -206,7 +227,7 @@ body {
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: fit;
+                    object-fit: contain;
                 }
                 span,
                 div {
@@ -214,14 +235,11 @@ body {
                     padding: 2px;
                 }
 
-                &.clickable {
+                &.clickable:hover {
                     cursor: pointer;
-                    &:hover {
-                        background-color: var(--bg-surface);
-                    }
+                    background-color: var(--bg-surface);
                 }
 
-                /* Corner Bookmark */
                 .corner-badge {
                     position: absolute;
                     bottom: 0;
@@ -240,21 +258,20 @@ body {
 
                     .badge-count {
                         position: absolute;
-                        bottom: 0.15em; /* Small em-based offset */
-                        right: 0.25em; /* Small em-based offset */
+                        bottom: 0.15em;
+                        right: 0.25em;
                         font-size: calc(var(--corner-size) * 0.4);
                         color: var(--text-dark);
                         font-weight: bold;
-                        line-height: 1;
                         z-index: 1;
                     }
                 }
             }
 
-            /* The Color Indicator */
+            /* The color indicator */
             .card-indicator {
                 width: 100%;
-                height: var(--indicator-height); /* Larger height */
+                height: var(--indicator-height);
                 margin-top: 4px;
                 display: flex;
                 justify-content: center;
@@ -268,7 +285,8 @@ body {
                 &.wrong {
                     background-color: var(--color-wrong);
                 }
-                /* Triangle Arrows */
+
+                /* Triangle arrows */
                 .hint-arrow {
                     width: 0;
                     height: 0;
@@ -278,6 +296,7 @@ body {
                     &.up {
                         border-bottom: 0.75em solid white;
                     }
+
                     &.down {
                         border-top: 0.75em solid white;
                     }
@@ -287,9 +306,10 @@ body {
     }
 }
 
+/* --- Modals & popups --- */
 .modal {
     position: fixed;
-    inset: 0; /* Shorthand for top/right/bottom/left: 0 */
+    inset: 0;
     background-color: var(--bg-overlay);
     z-index: 1000;
     display: flex;
@@ -331,58 +351,48 @@ body {
                 box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
                 animation: pulse 2s infinite;
             }
-            #winName {
-                color: var(--text-main);
-                margin: 0;
+            .menu-btn {
+                display: block;
+                margin: 20px auto 0;
+                background-color: var(--color-correct);
+                border-color: var(--color-correct);
+                color: white;
+                font-weight: bold;
+                padding: 10px 40px;
+                &:hover {
+                    background-color: var(--color-correct-hover);
+                }
             }
         }
 
-        ul {
+        #modalList {
             list-style: none;
             padding: 0;
-            li {
-                padding: 8px 0;
-                border-bottom: 1px solid var(--border-main);
-            }
-        }
-    }
-
-    ul#modalList {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 20px;
-
-        li {
-            background-color: var(--bg-surface);
-            border: 1px solid var(--border-light);
-            color: var(--text-main);
-            padding: 10px 15px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer; /* Indicates interactivity */
-            transition: all var(--transition-fast);
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
             justify-content: center;
-            min-width: 60px; /* Min width for square-ish look */
+            margin-top: 20px;
 
-            /* The "Interactive Object" feel */
-            &:hover {
-                background-color: var(--border-main);
-                border-color: var(--color-accent);
-                color: var(--color-accent);
-                transform: translateY(-3px) rotate(1deg);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            li {
+                background-color: var(--bg-surface);
+                border: 1px solid var(--border-light);
+                padding: 10px 15px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                transition: all var(--transition-speed);
+                &:hover {
+                    color: var(--color-accent);
+                    transform: translateY(-3px) rotate(1deg);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+                }
             }
         }
     }
 }
 
+/* --- Settings dropdown --- */
 .settings-dropdown {
     position: relative;
     margin-bottom: 20px;
@@ -390,13 +400,8 @@ body {
     .menu-btn {
         background-color: var(--bg-surface);
         color: var(--text-main);
-        border: 1px solid var(--border-light);
         padding: 8px 16px;
-        border-radius: 4px;
-        font-family: inherit;
         font-size: 14px;
-        cursor: pointer;
-        transition: all var(--transition-fast);
         display: flex;
         align-items: center;
         gap: 8px;
@@ -405,13 +410,9 @@ body {
             background-color: var(--border-main);
             border-color: var(--color-accent);
             box-shadow: 0 0 10px rgba(197, 197, 197, 0.2);
-            transform: translateY(-1px);
-        }
-
-        &:active {
-            transform: translateY(0);
         }
     }
+
     .menu-content {
         position: absolute;
         top: calc(100% + 10px);
@@ -422,31 +423,26 @@ body {
         padding: 15px;
         z-index: 1100;
         min-width: 220px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 
         h4 {
             margin: 10px 0;
             color: var(--text-dim);
             font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
-
         hr {
             border: 0;
             border-top: 1px solid var(--border-main);
             margin: 12px 0;
         }
-
         .setting-item {
             font-size: 14px;
-            color: var(--text-main);
             display: flex;
             align-items: center;
             cursor: pointer;
         }
-
         .column-list {
             display: flex;
             flex-direction: column;
@@ -457,6 +453,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    :root {
+        --fluid-font-square: 12px;
+        --corner-size: 1.8em;
+    }
+
     .game-container {
         width: 100%;
         padding: 10px; /* Reduce padding on mobile */
@@ -476,11 +477,6 @@ body {
     .results-container .guess-row {
         min-width: calc(var(--col-count, 6) * 75px);
         padding: 0 5px; /* Tiny buffer */
-    }
-
-    :root {
-        --fluid-font-square: 12px; /* Fix font size so it doesn't get too small */
-        --corner-size: 1.8em; /* Slightly smaller corner badges */
     }
 
     .card-square {

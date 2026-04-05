@@ -28,6 +28,8 @@ class UIRenderer {
         this.resetBtn = document.getElementById("resetBtn");
         this.settingsBtn = document.getElementById("settingsBtn");
         this.settingsMenu = document.getElementById("settingsMenu");
+        this.nextBtn = document.getElementById("nextBtn");
+        this.newGameBtn = document.getElementById("newGameBtn");
 
         this.hintsEnabled = false; // Default: Hints OFF
 
@@ -418,6 +420,17 @@ class GameManager {
         this.search = new SearchHandler("searchInput", "suggestionsBox", (char) =>
             this.makeGuess(char),
         );
+
+        this.ui.nextBtn.onclick = () => {
+            this.ui.infoModal.classList.add("hidden");
+            this.resetGame();
+        };
+
+        this.ui.newGameBtn.onclick = () => {
+            if (confirm("Are you sure you want to start a new game? Progress will be lost.")) {
+                this.resetGame();
+            }
+        };
 
         this.init();
     }
